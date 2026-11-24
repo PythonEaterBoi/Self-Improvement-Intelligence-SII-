@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#090d18"><meta name="description" content="SII — a browser-first mixture-of-agents self-improvement intelligence lab.">
+  <title>SII · Self-Improvement Intelligence</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar"><a class="brand" href="#"><span class="brand-mark">S</span><span>SII<span class="brand-sub">SELF-IMPROVEMENT INTELLIGENCE</span></span></a><div class="top-right"><span class="status"><i></i> BROWSER SESSION</span><button id="dataButton" class="quiet-btn">Training data <span id="dataCount">0</span></button></div></header>
+    <main>
+      <section class="hero"><div class="eyebrow"><span class="spark">✳</span> A COLLABORATIVE INTELLIGENCE LAB</div><h1>One question.<br><span>Many minds.</span></h1><p class="intro">Four specialist thinkers draft ideas. Two synthesizers find the signal. A final agent brings it together. Your feedback helps shape the next answer.</p></section>
+      <section class="workspace"><div class="section-title"><div><span class="step">01</span><h2>Give the agents a prompt</h2></div><span class="model-tag"><span class="dot"></span> SII LOCAL · EXPERIMENTAL</span></div>
+        <form id="promptForm"><label class="sr-only" for="prompt">Your prompt</label><textarea id="prompt" maxlength="1600" placeholder="What would you like to explore today?" required></textarea><div class="form-bottom"><span id="charCount">0 / 1600</span><button id="runButton" class="primary-btn" type="submit"><span>Run the team</span><span aria-hidden="true">↗</span></button></div></form>
+        <div class="pipeline"><div class="pipeline-label">THE SII PIPELINE</div><div class="flow"><div class="node"><b>01</b><span>4 thinkers</span></div><span class="arrow">→</span><div class="node"><b>02</b><span>2 synthesizers</span></div><span class="arrow">→</span><div class="node"><b>03</b><span>Final answer</span></div><span class="arrow">→</span><div class="node mini"><b>✳</b><span>Mini-agents</span></div></div></div>
+      </section>
+      <section id="results" class="results" hidden><div class="section-title results-heading"><div><span class="step">02</span><h2>Inside the collaboration</h2></div><button id="clearButton" class="quiet-btn">Clear</button></div><div id="agentGrid" class="agent-grid"></div><article id="finalCard" class="final-card" hidden><div class="answer-label"><span class="answer-icon">✳</span><span>THE TEAM'S ANSWER</span><span class="live-label">SYNTHESIZED</span></div><div id="finalAnswer" class="answer-text"></div><div class="feedback"><span>Was this useful?</span><button class="feedback-btn" data-rating="up" aria-label="Helpful">↑</button><button class="feedback-btn" data-rating="down" aria-label="Not helpful">↓</button><span id="feedbackStatus" role="status"></span></div></article></section>
+      <section class="learn"><div class="learn-icon">✳</div><div><h3>Learning should be transparent.</h3><p>In this static demo, mini-agents are local feedback helpers—not Gemini services. Nothing is sent to a server. Helpful feedback can be saved in this browser as review examples; it does not update model weights.</p></div><button id="learnMore" class="text-link">About the data <span>↗</span></button></section>
+    </main>
+    <footer><span>SII <span class="muted">· A research prototype</span></span><span>Built for the open web <span class="footer-dot">●</span></span></footer>
+  </div>
+  <dialog id="dataDialog"><div class="dialog-head"><div><div class="eyebrow">DATA & LEARNING</div><h2>Keep the loop honest.</h2></div><button id="closeDialog" class="close-btn" aria-label="Close">×</button></div><p>This GitHub Pages build runs entirely in your browser. It uses a small set of bundled prompt patterns and deterministic specialist templates; it does not ship or train a PyTorch model, call Gemini, or upload your prompts.</p><p><strong>SmolTalk:</strong> SII is designed to use Hugging Face's <a href="https://huggingface.co/datasets/HuggingFaceTB/smoltalk" target="_blank" rel="noreferrer">HuggingFaceTB/smoltalk</a> as a future training-data source. The full dataset is not bundled here. Review its license, access terms, and split format before downloading or using it.</p><p>Feedback examples are stored locally in this browser only. Export them to review or remove them. Feedback is not automatically treated as correct training data.</p><div class="dialog-actions"><button id="exportButton" class="quiet-btn">Export examples</button><button id="resetButton" class="danger-btn">Delete local data</button></div><p id="dataMessage" class="data-message" role="status"></p></dialog>
+  <script src="app.js"></script>
+</body></html>
